@@ -5,4 +5,5 @@ README.md
 setup.py
 pythonthaibulksms/__init__.py
 pythonthaibulksms/django.py
+pythonthaibulksms/tasks.py
 pythonthaibulksms/thaibulksms.py
