@@ -1,6 +1,7 @@
 from celery import shared_task
 from pythonthaibulksms.django import django_thaibulksms_sms
 
+
 @shared_task
 def django_thaibulksms_sms_celery(
         msisdn,

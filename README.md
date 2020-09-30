@@ -1,8 +1,8 @@
 # python-thaibulksms
 
-A small number of tiny wrapper functions to help you get started sending SMSs using Thailand's http://www.thaibulksms.com/. These functions work in plain python plus there's an extra function specifically designed to work with django.
+A small number of tiny wrapper functions to help you get started sending SMSs using Thailand's http://www.thaibulksms.com/. These functions work in plain python plus there's a couple of extra functions specifically designed to work with django and django+celery.
 
-ThaiBulkSMS.com also offer OTP sending and retrieving functionality but that is currently not included in this package. It would be trivial to add however.
+ThaiBulkSMS.com also offer OTP sending and retrieving functionality but that is currently not included in this package. It would be trivial to add.
 
 ### Sending SMS:
 
@@ -24,7 +24,6 @@ thaibulksms_sms(
 ### Using Django
 
 First, add the following config to your project `settings.py` file
-
 ```
 THAIBULKSMS = {
     'default': {
@@ -37,7 +36,6 @@ THAIBULKSMS = {
 ```
 
 Then call the following function as required:
-
 ```
 from pythonthaibulksms.django import django_thaibulksms_sms
 
@@ -51,4 +49,14 @@ django_thaibulksms_sms(
 
 ### Using Celery within Django
 
-Todo
+To send call the thaibulksms API via a task queue, use:
+```
+from pythonthaibulksms.tasks import django_thaibulksms_sms_celery
+
+django_thaibulksms_sms_celery.delay(
+    '0899999999', # recipient phone number
+    'Hello! How are you?', # message
+    'default', # optional, which config to use from your settings.py, defaults to 'default'
+    schedule='2009301116', # optional, format YYMMDDhhmm
+)
+```

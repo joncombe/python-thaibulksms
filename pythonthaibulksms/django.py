@@ -1,6 +1,7 @@
 from django.conf import settings
 from pythonthaibulksms.thaibulksms import thaibulksms_sms
 
+
 """
 In your settings.py
 
