@@ -1,13 +1,12 @@
 # -*- coding: utf-8 -*-
 from distutils.core import setup
-from setuptools import find_packages
 
 setup(
     name='python-thaibulksms',
-    version='0.0.1',
+    version='0.0.2',
     author=u'Jon Combe',
     author_email='jon@salebox.io',
-    packages=find_packages(),
+    packages=['pythonthaibulksms'],
     include_package_data=True,
     install_requires=[],
     url='https://github.com/joncombe/python-thaibulksms',

@@ -39,6 +39,8 @@ THAIBULKSMS = {
 Then call the following function as required:
 
 ```
+from pythonthaibulksms.django import django_thaibulksms_sms
+
 django_thaibulksms_sms(
     '0899999999', # recipient phone number
     'Hello! How are you?', # message
@@ -46,3 +48,7 @@ django_thaibulksms_sms(
     schedule='2009301116', # optional, format YYMMDDhhmm
 )
 ```
+
+### Using Celery within Django
+
+Todo
