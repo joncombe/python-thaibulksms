@@ -49,6 +49,16 @@ django_thaibulksms_sms(
 
 ### Using Celery within Django
 
+Add `pythonthaibulksms` to the `INSTALLED_APPS` section of your project `settings.py` file
+
+```
+INSTALLED_APPS = [
+    ...
+    'pythonthaibulksms',
+    ...
+]
+```
+
 To send call the thaibulksms API via a task queue, use:
 ```
 from pythonthaibulksms.tasks import django_thaibulksms_sms_celery
